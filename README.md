@@ -67,9 +67,9 @@ YES_NO_APP/
 ```
 ## Dependencies
 
-http: For making HTTP requests to the GIF API.
-flutter_spinkit: For showing loading animations.
-flutter_riverpod: For state management (optional, if you're using Riverpod).
+- [http](https://pub.dev/packages/http): For making HTTP requests to the GIF API.
+- [flutter_spinkit](https://pub.dev/packages/flutter_spinkit): For showing loading animations.
+- [provider](https://pub.dev/packages/provider): For state management using the Provider package.
 
 ## Contributing
 Contributions are welcome! If you have any ideas to improve the app, please open an issue or submit a pull request.
