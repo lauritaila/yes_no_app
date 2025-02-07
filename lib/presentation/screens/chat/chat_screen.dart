@@ -33,7 +33,9 @@ class _ChatView extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 itemCount: 100,
-                itemBuilder: (context, index){ const Text('Index: $index'); },
+                itemBuilder: (context, index){ 
+                  return (index % 2 == 0) ? HisMessageBubble() : MyMessageBubble();
+                },
               )
             ),
             Text("message"),
@@ -42,5 +44,4 @@ class _ChatView extends StatelessWidget {
       )
     );
   }
-
 }
