@@ -42,7 +42,20 @@ class _ImageBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20), 
-      child: Image.network('https://yesno.wtf', width: size.width * 0.7, height: 200, fit: BoxFit.cover) 
+      child: Image.network('https://yesno.wtf', 
+        width: size.width * 0.7, 
+        height: 200, fit: 
+        BoxFit.cover,
+        loadingBuilder: (context, child, loadingProgress) {
+          if (loadingProgress == null) return child;
+          return Container(
+            width: size.width * 0.7,
+            height: 200,
+            padding: const EdgeInsets.all(10),
+            child: const Center(child: CircularProgressIndicator(strokeWidth: 2,)),
+          );
+        }
+      ) 
     );
   }
 
