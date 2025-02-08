@@ -2,7 +2,7 @@
 enum FromWho {mine, his}
 
 class Message{
-  final Sting text;
+  final String text;
   final String? imageUrl;
   final FromWho fromWho;
 

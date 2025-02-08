@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 
 class MessageFieldBox extends StatelessWidget {
-  
-  final valueChanged<String> onValue;
+
+  final ValueChanged<String> onValue;
 
   const MessageFieldBox({super.key, required this.onValue});
 
   @override
   Widget build(BuildContext context) {
-
     final textController = TextEditingController();
     final FocusNode focusNode = FocusNode();
 
-    final colors = Theme.of(context).colorScheme;
 
     final outlineInputBorder = UnderlineInputBorder(
-      borderSide: const BorderSide(color: colors.transparent),
-      borderRadius: BorderRadius.circular(40)
-    )
+        borderSide: const BorderSide(color: Colors.transparent),
+        borderRadius: BorderRadius.circular(40));
 
     return TextFormField(
       onTapOutside: (event) => focusNode.unfocus(),
