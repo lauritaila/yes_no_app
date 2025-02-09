@@ -14,13 +14,12 @@ class ChatScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const Padding(
-          padding: EdgeInsets.all(4.0),
+          padding: EdgeInsets.all(5.0),
           child: CircleAvatar(
             backgroundImage: NetworkImage('https://content.api.news/v3/images/bin/7743441241ec8c4b88072b88a2a4c4c4?width=1440'),
           ),
         ),
-        title: const Text('My Love <3'),
-        centerTitle: true,
+        title: const Text('My Love ❤️'),
       ),
       body: _ChatView(),
     );
@@ -52,6 +51,7 @@ class _ChatView extends StatelessWidget {
               )
             ),
             MessageFieldBox( onValue : (value) => chatProvider.sendMessage(value)),
+            const SizedBox(height: 10)
           ]
         )
       )
