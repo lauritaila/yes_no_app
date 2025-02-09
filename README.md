@@ -11,8 +11,8 @@ Welcome to the "Yes or No GIF" chat app! This is a basic Flutter application tha
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
+![Screenshot 1](screenshots/screenshot1.jpeg)
+![Screenshot 2](screenshots/screenshot2.jpeg)
 
 ## Requirements
 
@@ -48,28 +48,39 @@ The app follows a basic structure inspired by Clean Architecture, separating con
 ```
 YES_NO_APP/
 ├── lib/
-│   ├── main.dart
-│   ├── config/                # Core functionalities (e.g., constants, themes)
-│   ├── data/                  # Data layer (e.g., APIs, repositories)
-│   │   └── datasources/       # Data sources (e.g., remote API)
-│   │   └── repositories/      # Repository implementations
-│   ├── domain/                # Domain layer (e.g., entities, use cases)
-│   │   └── entities/          # Business logic entities
-│   │   └── repositories/      # Repository interfaces
-│   │   └── usecases/          # Application use cases
-│   ├── presentation/          # Presentation layer (UI and state management)
-│   │   └── screens/           # App screens
-│   │   └── widgets/           # Reusable widgets
-│   │   └── providers/         # State management (e.g., Riverpod, Provider)
-├── assets/                    # Static assets (e.g., images, fonts)
-├── test/                      # Unit and widget tests
-└── pubspec.yaml               # Project dependencies
+│ ├── main.dart         # Entry point of the application
+│ ├── config/           # Configuration and utilities
+│ │ ├── theme/          # App theme (colors, fonts, etc.)
+│ │ └── helpers/        # Helper functions and utilities
+│ ├── infrastructure/   # Infrastructure layer (data sources and models)
+│ │ └── models/         # Data models (e.g., API response models)
+│ ├── domain/           # Domain layer (business logic)
+│ │ └── entities/       # Business entities (core data structures)
+│ ├── presentation/     # Presentation layer (UI and state management)
+│ │ ├── screens/        # App screens (pages)
+│ │ ├── widgets/        # Reusable UI components
+│ │ └── providers/      # State management (using Provider)
+├── assets/             # Static assets (e.g., images, fonts)
+├── test/               # Unit and widget tests
+└── pubspec.yaml        # Project dependencies
 ```
+
+### How the Layers Work Together:
+1. **`domain/entities/`**: Define the core business entities (e.g., `Answer` with a `gifUrl` field).
+2. **`infrastructure/models/`**: Map API responses (or other data sources) to the domain entities (e.g., `AnswerModel`).
+3. **`presentation/providers/`**: Use `Provider` to manage app state (e.g., `ChatProvider` handles sending questions and receiving answers).
+4. **`presentation/screens/`**: Display the UI and interact with the state managed by the providers.
+5. **`config/`**: Provides global configurations and utilities used across the app.
+
+
+---
+
+This structure ensures a clean separation of concerns, making the app easier to maintain, test, and scale.
+
 ## Dependencies
 
-- [http](https://pub.dev/packages/http): For making HTTP requests to the GIF API.
-- [flutter_spinkit](https://pub.dev/packages/flutter_spinkit): For showing loading animations.
-- [provider](https://pub.dev/packages/provider): For state management using the Provider package.
+- [dio](https://pub.dev/packages/dio): A powerful HTTP client for Dart, used for making API requests.
+- [provider](https://pub.dev/packages/provider): A state management library for Flutter, used to manage and share app state efficiently.
 
 ## Contributing
 Contributions are welcome! If you have any ideas to improve the app, please open an issue or submit a pull request.
