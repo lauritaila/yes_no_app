@@ -11,8 +11,8 @@ Welcome to the "Yes or No GIF" chat app! This is a basic Flutter application tha
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.jpeg)
-![Screenshot 2](screenshots/screenshot2.jpeg)
+<img src="screenshots/screenshot1.jpeg" height="350" alt="Screenshot 1" /> 
+<img src="screenshots/screenshot2.jpeg" height="350" alt="Screenshot 2" />
 
 ## Requirements
 
